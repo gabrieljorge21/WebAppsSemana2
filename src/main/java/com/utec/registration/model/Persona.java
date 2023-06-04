@@ -2,13 +2,13 @@ package com.utec.registration.model;
 
 public class Persona {
 	
-	private int id;
+	private long id;
 	private String nombre;
 	private int edad;
 	private String direccion;
 	private String telefono;
 	
-	public Persona(int id, String nombre, int edad, String direccion, String telefono) {
+	public Persona(long id, String nombre, int edad, String direccion, String telefono) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -16,12 +16,14 @@ public class Persona {
 		this.direccion = direccion;
 		this.telefono = telefono;
 	}
+	
+	public Persona() {}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

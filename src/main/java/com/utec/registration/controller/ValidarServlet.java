@@ -43,7 +43,7 @@ public class ValidarServlet extends HttpServlet {
 		
 		if(!nombre.isBlank()) {
 			String msjError = "";
-			int edad=Integer.parseInt(request.getParameter("nombre"));
+			int edad=Integer.parseInt(request.getParameter("edad"));
 			String direccion=request.getParameter("direccion");
 			String telefono=request.getParameter("telefono");
 			
@@ -53,7 +53,7 @@ public class ValidarServlet extends HttpServlet {
 			pvm.setEdad(edad);
 			pvm.setDireccion(direccion);
 			pvm.setTelefono(telefono);
-			
+				
 			request.setAttribute("persona", pvm);
 			request.setAttribute("mensajeError", msjError);
 			
@@ -63,9 +63,11 @@ public class ValidarServlet extends HttpServlet {
 		}	
 		else {
 			String msjError = "Debe ingresar el nombre";
-			RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
 			request.setAttribute("mensajeError",msjError);
-            rd.forward(request, response);
+			
+			RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
+            
+			rd.include(request, response);
 		}
 	}
 
